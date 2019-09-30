@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     Container: {
-        height: '100%',
-        width: '100%',
+        
         backgroundColor: '#ecf0f1'
     },
     LogoContainer: {
@@ -13,6 +12,10 @@ const styles = StyleSheet.create({
     Logo: {
         height:350,
         width: 200
+    },
+    test:{
+        alignItems: "flex-end",
+        flex:1,
     }
 })
 

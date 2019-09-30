@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
 import {withRouter} from 'react-router-native';
-import { 
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  Button
-} from 'react-native';
+import { View, ScrollView} from 'react-native';
 
 import styles from './style';
+import ListHomePageItem from './HomePageItems/homePageItems'
 
 class HomePage extends Component {
   constructor(props) {
@@ -20,14 +15,26 @@ class HomePage extends Component {
 
   render() {
     return (
-      <View style={styles.Container}>
-        <SafeAreaView>
-          <ScrollView>
-            <Text> index </Text>
-            <Button title="change page" onPress={()=>this.props.history.push("/test")}/>
-          </ScrollView>
-        </SafeAreaView>
-      </View>
+      <View style={styles.test}>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          contentContainerStyle={{ flexGrow: 1 }}
+          style={styles.scrollView}>
+           <View >
+              <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/>
+            </View>
+            <View >
+              <ListHomePageItem image={require("../../assets/images/HomePage/lutte.jpg")} title="prodect"/>
+            </View>
+            <View >
+              <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/>
+            </View>
+            <View >
+            <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="test"/>
+            </View>
+         
+        </ScrollView>
+    </View>
     );
   }
 }
