@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {withRouter} from 'react-router-native';
-import { View, ScrollView} from 'react-native';
+import { View,Text,Image, ScrollView} from 'react-native';
 
 import styles from './style';
 import ListHomePageItem from './HomePageItems/homePageItems'
@@ -15,26 +15,13 @@ class HomePage extends Component {
 
   render() {
     return (
-      <View style={styles.test}>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          contentContainerStyle={{ flexGrow: 1 }}
-          style={styles.scrollView}>
-           <View >
-              <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/>
-            </View>
-            <View >
-              <ListHomePageItem image={require("../../assets/images/HomePage/lutte.jpg")} title="prodect"/>
-            </View>
-            <View >
-              <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/>
-            </View>
-            <View >
-            <ListHomePageItem image={require("../../assets/images/HomePage/produits.jpg")} title="test"/>
-            </View>
-         
-        </ScrollView>
-    </View>
+        <ScrollView style={styles.container}>
+        <ListHomePageItem onPress={()=>this.props.history.push("/product")} image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/> 
+        <ListHomePageItem image={require("../../assets/images/HomePage/agences.jpg")} title="prodect"/>
+        <ListHomePageItem image={require("../../assets/images/HomePage/actus.jpg")} title="test2"/>
+        <ListHomePageItem image={require("../../assets/images/HomePage/agences.jpg")} title="test"/>
+         <Text style={{fontSize:80}}></Text>
+          </ScrollView>
     );
   }
 }

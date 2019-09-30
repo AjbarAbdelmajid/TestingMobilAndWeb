@@ -12,12 +12,14 @@ const ListHomePageItem = props => {
   return (
     <TouchableOpacity
       style={style.container}
-      //onPress={props.onClick}
+      onPress={props.onPress ? props.onPress : null}
+
     >
     
       <Image
         //style={style.background}
         source={props.image}
+        style={props.style ? props.style : null}
       />
       <View style={style.toplayer}>
         <Text style={style.label}>

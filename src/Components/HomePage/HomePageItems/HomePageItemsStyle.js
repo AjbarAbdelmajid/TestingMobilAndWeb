@@ -5,7 +5,7 @@ import {
 const style = StyleSheet.create({
   container: {
     //height: 50,
-    flex:1,
+    //flex:1,
     width: '100%',
 
   },
@@ -15,9 +15,8 @@ const style = StyleSheet.create({
     resizeMode: 'cover',
   },
   label: {
-    color: '#34495e',
-    fontFamily: 'Monospace',
-    fontSize: 20,
+    color: '#fff',
+    fontSize: 30,
   },
   toplayer: {
     position: 'absolute',

@@ -7,6 +7,10 @@
  */
 import React, { Component } from 'react';
 import SplashScreen from 'react-native-splash-screen';
+
+import {Provider} from 'react-redux';
+import store from './src/store/store';
+
 import Routes from './src/Components/index';
 //import FrontPage from './src/Components/FrontPage/FrontPage';
 
@@ -25,7 +29,9 @@ class App extends Component{
 
   render(){
     return (
-        this.state.view
+      <Provider store={store}>
+        {this.state.view}
+      </Provider>
     );
   }
 };

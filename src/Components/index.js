@@ -4,7 +4,7 @@ import {NativeRouter, Switch, Route, useHistory, withRouter, Router} from 'react
 import { View, Text, Button } from 'react-native';
 
 import HomePage from './HomePage/HomePage';
-import FrontPage from './FrontPage/FrontPage';
+import Product from './Products/product';
 import Navbar from './navBar/navbar';
 
 class Routes extends Component {
@@ -19,7 +19,7 @@ class Routes extends Component {
                         <Route path="" component={()=><Navbar />}/>
                         <Switch>
                             <Route path="/" exact component={()=><HomePage />}/>
-                            <Route path="/test" exact component={()=><FrontPage />}/>
+                            <Route path="/product" exact component={()=><Product />}/>
                         </Switch>
                     </View>
                 </NativeRouter>

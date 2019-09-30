@@ -19,7 +19,7 @@ class Navbar extends Component {
             
                 <Header
                     placement="left"
-                    backgroundColor="#2ecc71"
+                    backgroundColor="#fff"
                     leftComponent={
                         <TouchableOpacity onPress={()=>this.props.history.push("/")}
                         >
@@ -33,7 +33,6 @@ class Navbar extends Component {
                             <Image source={require('../../assets/images/Header/logo-header.png')} style={styles.Logo}/>
                         </ThemeProvider>
                     }
-                    rightComponent={{ icon: 'home', color: '#fff' }}
                 />
         );
     }

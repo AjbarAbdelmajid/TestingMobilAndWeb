@@ -1,21 +1,31 @@
 import { StyleSheet } from 'react-native';
 
-
 const styles = StyleSheet.create({
-    Container: {
-        
-        backgroundColor: '#ecf0f1'
+    container: {
+        paddingBottom: 50,
+        marginBottom: 55,
+        flexGrow: 1 
     },
-    LogoContainer: {
-        alignItems: 'center',
+    item: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
     },
+    
     Logo: {
         height:350,
         width: 200
+    
     },
-    test:{
-        alignItems: "flex-end",
-        flex:1,
+    list: {
+        flexGrow: 1,
+    },
+    animatedView: {
+        flexGrow: 1,
+        height: 130,
+    },
+    animatedView1: {
+        flexGrow: 1 
     }
 })
 
