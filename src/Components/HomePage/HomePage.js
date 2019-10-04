@@ -26,4 +26,6 @@ class HomePage extends Component {
   }
 }
 
+
+
 export default withRouter(HomePage);

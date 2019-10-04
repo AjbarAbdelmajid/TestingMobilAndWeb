@@ -1,11 +1,11 @@
 const initialState = {
         types:[{
-            Typetitle:"Categories",
-            Typeitems: ["Protection Product", "Various"]
+            titleType:"Categories",
+            items: ["Protection Product", "Various"]
             },
             {
-            Typetitle:"Culter",
-            Typeitems: ["Protection Product", "Various"]
+            titleType:"Culter",
+            items: ["Protection Product", "Various"]
             }
         ]
 };
