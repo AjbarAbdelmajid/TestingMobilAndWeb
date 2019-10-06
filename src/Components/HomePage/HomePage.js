@@ -16,12 +16,11 @@ class HomePage extends Component {
   render() {
     return (
         <ScrollView style={styles.container}>
-        <ListHomePageItem onPress={()=>this.props.history.push("/product")} image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/> 
-        <ListHomePageItem image={require("../../assets/images/HomePage/agences.jpg")} title="prodect"/>
-        <ListHomePageItem image={require("../../assets/images/HomePage/actus.jpg")} title="test2"/>
-        <ListHomePageItem image={require("../../assets/images/HomePage/agences.jpg")} title="test"/>
-         <Text style={{fontSize:80}}></Text>
-          </ScrollView>
+        <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/agences.jpg")} title="testing"/>
+        <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/produits.jpg")} title="prodect"/> 
+        <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/agences.jpg")} title="test"/>
+        <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/actus.jpg")} title="test2"/>
+        </ScrollView>
     );
   }
 }

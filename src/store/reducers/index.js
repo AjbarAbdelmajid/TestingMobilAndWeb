@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import ProductReducer from './productSectionReducer'
+import CategoriesReducer from './categoriesReducer'
 
 const indexReducer = combineReducers({
-    product: ProductReducer
+    categoriesStore: CategoriesReducer
 });
 
 export default indexReducer

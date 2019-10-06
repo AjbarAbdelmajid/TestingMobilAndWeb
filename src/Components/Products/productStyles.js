@@ -1,19 +1,20 @@
 import {
-  StyleSheet,
+  StyleSheet, Dimensions
 } from 'react-native';
 
+const { height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
-    Typecontainer: {
-      marginTop: 30,
-      backgroundColor: "#6ab04c",
-      paddingVertical: 10,
-      paddingHorizontal: 11,
-      marginBottom: 0,
+    
+    categoriesList: {
+      width: '92%',
+      alignSelf: 'center',
+      marginBottom: 30,
     },
-    Typetext: {
-      color: "#f5f6fa",
-      fontSize: 20,
-    }
+    listScroll:{
+      paddingTop: 0,
+      height: height * 0.7,
+    },
 });
 
 export default styles;

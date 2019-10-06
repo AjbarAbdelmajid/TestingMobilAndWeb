@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
-        paddingBottom: 50,
-        marginBottom: 55,
-        flexGrow: 1 
+        height: height * 0.81,
     },
     item: {
         padding: 10,
