@@ -6,6 +6,7 @@ import ParentItem from './Parents'
 
 import styles from "./productStyles";
 import Categories from "./categories/categories"
+import Cultures from "./cultures/culture"
 import ListHomePageItem from '../HomePage/HomePageItems/homePageItems'
 
 class Prodect extends Component {
@@ -20,6 +21,7 @@ class Prodect extends Component {
                     <ParentItem title="Categories"/>
                     <Categories/>
                     <ParentItem title="Culture"/>
+                    <Cultures/>
                 </View>
             </ScrollView>
         )
