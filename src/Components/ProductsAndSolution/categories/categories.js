@@ -6,13 +6,20 @@ import { Header,Button, ThemeProvider  } from 'react-native-elements';
 
 import styles from './categoriesStyle'
 import {getCategories} from "../../../store/getters/getCategories"
+import {getProductsByType} from "../../../store/getters/getProducts"
 
 
 class Categories extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+    componentDidMount() {
         this.props.getCategories();
+    }
+    onPress(categoryId){
+        this.props.history.push("/product")
+        this.props.getProductsByType(categoryId, "category");
         
     }
     
@@ -29,7 +36,7 @@ class Categories extends Component {
                         Categories.map( category =>{
                             return (
 
-                                <TouchableOpacity   /*onPress={this.onPress}*/ style={styles.container}>
+                                <TouchableOpacity onPress={()=>this.onPress(category.id)} style={styles.container}>
                                     {console.log(category)}
                                     {/*
                                     !props.noIcon &&
@@ -61,7 +68,8 @@ const mapStateToProps = state =>  {
     }
 }
 const mapDispatchToProps = {
-    getCategories : () => getCategories()
+    getCategories : () => getCategories(),
+    getProductsByType: (Id, type) => getProductsByType(Id, type)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Categories));

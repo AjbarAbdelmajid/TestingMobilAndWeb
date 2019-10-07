@@ -5,13 +5,20 @@ import {connect} from "react-redux"
 
 import styles from './cultureStyle'
 import {getCultures} from "../../../store/getters/getCultures"
+import {getProductsByType} from "../../../store/getters/getProducts"
 
 
 class Cultures extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+    }
+
+    componentDidMount() {
         this.props.getCultures();
+    }
+    onPress(cultureId){
+        this.props.history.push("/product");
+        this.props.getProductsByType(cultureId, "culture");
         
     }
     
@@ -28,7 +35,7 @@ class Cultures extends Component {
                         cultures.map( culture =>{
                             return (
 
-                                <TouchableOpacity   /*onPress={this.onPress}*/ style={styles.container}>
+                                <TouchableOpacity   onPress={()=>this.onPress(culture.id)} style={styles.container}>
                                     {console.log(culture)}
                                     {/*
                                     !props.noIcon &&
@@ -60,7 +67,8 @@ const mapStateToProps = state =>  {
     }
 }
 const mapDispatchToProps = {
-    getCultures : () => getCultures()
+    getCultures : () => getCultures(),
+    getProductsByType : (Id, type) => getProductsByType(Id, type)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cultures));

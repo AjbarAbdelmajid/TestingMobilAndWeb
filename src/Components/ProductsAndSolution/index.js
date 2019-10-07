@@ -4,12 +4,12 @@ import {withRouter} from 'react-router-native';
 import { Header,Button, ThemeProvider  } from 'react-native-elements';
 import ParentItem from './Parents'
 
-import styles from "./productStyles";
+import styles from "./indexStyles";
 import Categories from "./categories/categories"
 import Cultures from "./cultures/culture"
 import ListHomePageItem from '../HomePage/HomePageItems/homePageItems'
 
-class Prodect extends Component {
+class ProdectsAndSolution extends Component {
     constructor(props) {
         super(props);
     }
@@ -42,4 +42,4 @@ class Prodect extends Component {
 
 
 
-export default withRouter(Prodect);
+export default withRouter(ProdectsAndSolution);
