@@ -2,14 +2,17 @@
 import {GET_PRODUCTS_SUCCESS,
     GET_PRODUCTS_FAILURE,
     IS_DATA_ENDED,
-    GET_PRODUCTS_BEGIN} from '../actions/productsAction.js'
+    GET_PRODUCTS_BEGIN,
+    GET_PRODUCTDETAILS_SUCCESS,
+    GET_PRODUCTDETAILS_FAILURE} from '../actions/productsAction.js'
 
 const initialState = {
     products:[],
     isLoading: false,
     error: null,
     currentPage: 0,
-    isDataEnded: true
+    isDataEnded: true,
+    productDetails: [],
 };
 
 const ProductsReducer = (state = initialState, action)=>{
@@ -43,6 +46,11 @@ const ProductsReducer = (state = initialState, action)=>{
                 products: [],
                 error: action.errorPayload,         
             }
+        case GET_PRODUCTDETAILS_SUCCESS:
+        return {
+            ...state,
+            productDetails: action.productDetailPayload
+        }
         default:
             return state;
     }

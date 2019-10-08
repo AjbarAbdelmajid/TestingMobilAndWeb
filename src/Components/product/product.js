@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-native';
 import {connect} from "react-redux"
 
 import styles from './productStyle'
-import {getProductsByType} from '../../store/getters/getProducts'
+import {getProductsByType, getProductDetails} from '../../store/getters/getProducts'
 
 class Products extends Component {
     constructor(props) {
@@ -13,6 +13,7 @@ class Products extends Component {
         this.state = {};
         
     }
+    // deprecated method
     scrolleContent (){
         return (
             <ScrollView style={styles.listScroll}>
@@ -40,6 +41,15 @@ class Products extends Component {
                 </View>
             </ScrollView>
         )
+    }
+    // show product details
+    onPress(productId){
+        this.props.history.push({
+            pathname: "/productDetails",
+            state: { Typename:this.props.location.state.Typename}
+          })
+        this.props.getProductDetails(productId);
+        
     }
     renderSeparator= ()=>{
         return (
@@ -90,11 +100,14 @@ class Products extends Component {
                     data={products}
                     renderItem={({item}) => 
                         <View style={{marginBottom: 10, paddingBottom: 10}}>
+        
                             <ListItem
                                 roundAvatar
                                 key={item.id}
                                 title={item.nomProduit}
-                            />        
+                                onPress={() => {this.onPress(item.id)}}
+                            />
+                            
                         </View>
                     }
                     keyExtractor= {item => item.id}
@@ -120,7 +133,8 @@ const mapStateToProps = state =>  {
     }
 }
 const mapDispatchToProps = {
-    getProductsByType: (Id, type, page) => getProductsByType(Id, type, page)
+    getProductsByType: (Id, type, page) => getProductsByType(Id, type, page),
+    getProductDetails: (productId) => getProductDetails(productId),
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products));

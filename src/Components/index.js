@@ -5,7 +5,8 @@ import { View, Text, Button } from 'react-native';
 
 import HomePage from './HomePage/HomePage';
 import ProdectsAndSolution from './ProductsAndSolution';
-import Products from "./product/product"
+import Products from "./product/product";
+import ProductDetails from "./product/ProductDetails"
 import Navbar from './navBar/navbar';
 
 class Routes extends Component {
@@ -21,6 +22,7 @@ class Routes extends Component {
                         <Switch>
                             <Route path="/" exact component={()=><HomePage />}/>
                             <Route path="/productAndSolution" exact component={()=><ProdectsAndSolution />}/>
+                            <Route path="/ProductDetails" exact component={()=><ProductDetails />}/>
                             <Route path="/Product" exact component={()=><Products />}/>
                         </Switch>
                     </View>

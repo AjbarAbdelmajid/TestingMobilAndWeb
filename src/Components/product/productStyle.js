@@ -2,7 +2,7 @@ import {
     StyleSheet, Dimensions
   } from 'react-native';
 
-  const { height } = Dimensions.get('window');
+  const { height, width } = Dimensions.get('window');
   
   const styles = StyleSheet.create({
       
@@ -24,6 +24,25 @@ import {
         width: '100%',
         backgroundColor: '#CED0CE',
         //marginLeft: '14%'
+      },
+//__________Product details_______
+
+      productDetailImg: {
+        height: height * 0.3,
+        //width: width * 1
+      },
+      detailsScroll: {
+         paddingTop: 0,
+        height: height * 0.7,
+      },
+      detailscontainer: {
+        marginBottom: 20,
+      },
+      productTitle: {
+        alignSelf: 'center',
+        padding: 5,
+        fontSize: 20,
+        //color: "#2980b9"
       }
   });
   

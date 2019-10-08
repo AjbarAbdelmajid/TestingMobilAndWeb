@@ -5,7 +5,9 @@ import {
     ProductsDataBegin,
     ProductsDataSuccess,
     ProductsDataFail,
-    isDataEnded
+    isDataEnded,
+    ProductDetailsSuccess,
+    ProductDetailsFail
 } from '../actions/productsAction.js'
 
 
@@ -46,6 +48,29 @@ export const getProductsByType = (Id, type, page)=>{
             // if there is an error with establishing the connection with the server
             }).catch(err => {
                 dispatch(ProductsDataFail(err.message));
+                console.log("what you did wrong is : ",err.message);
+            })
+    }
+};
+
+// get the product details
+export const getProductDetails = (productId)=>{
+    return dispatch => {
+
+        //get data from SaoasApi
+        return axios.get(`${config.baseUrl}/productData/${productId}`)
+
+            // if the connection with the api server is okay
+            .then(response =>{
+                if (response.status === 200){
+                    dispatch(ProductDetailsSuccess(response.data))
+                } else{
+                    throw Error(response.status)
+                }
+
+            // if there is an error with establishing the connection with the server
+            }).catch(err => {
+                dispatch(ProductDetailsFail(err.message));
                 console.log("what you did wrong is : ",err.message);
             })
     }
