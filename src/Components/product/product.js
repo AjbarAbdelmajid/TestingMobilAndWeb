@@ -78,10 +78,10 @@ class Products extends Component {
     render() {
         const {products} = this.props;
         console.log("product length : ", products.length)
-        /*if (products.length === 0){
-            //return (<View><ActivityIndicator size="large" color="#00ff00" /></View>)
+        if (products.length === 0){
+            return (<View><ActivityIndicator size="large" color="#00ff00" /></View>)
         }
-        else{*/
+        else{
             return (
                 <View style={styles.container}>
                     {/*console.log("productsByCategory : ",products)*/}
@@ -106,7 +106,7 @@ class Products extends Component {
                     />
                 </View>
             );
-        //}
+        }
         
     }
 }

@@ -22,7 +22,7 @@ export const getProductsByType = (Id, type, page)=>{
             url = `${config.baseUrl}/productbyCategorie/${Id}/page/${page}/maxResut/${10}`
         }
         else if(type === "culture"){
-            url = `${config.baseUrl}/productbyCulture/${Id}`
+            url = `${config.baseUrl}/productbyCulture/${Id}/page/${page}/maxResut/${10}`
         }
         else {
             console.log('the error is in the getProduct if statement')

@@ -16,9 +16,12 @@ class Cultures extends Component {
     componentDidMount() {
         this.props.getCultures();
     }
-    onPress(cultureId){
-        this.props.history.push("/product");
-        this.props.getProductsByType(cultureId, "culture");
+    onPress(cultureId, nom){
+        this.props.history.push({
+            pathname: "/product",
+            state: { id: cultureId,Typename:nom, type: "culture" }
+          })
+        this.props.getProductsByType(cultureId, "culture", 0);
         
     }
     
@@ -35,7 +38,7 @@ class Cultures extends Component {
                         cultures.map( culture =>{
                             return (
 
-                                <TouchableOpacity   onPress={()=>this.onPress(culture.id)} style={styles.container}>
+                                <TouchableOpacity   onPress={()=>this.onPress(culture.id, culture.nomFamille)} style={styles.container}>
                                     {/*console.log(culture)*/}
                                     {/*
                                     !props.noIcon &&
@@ -68,7 +71,7 @@ const mapStateToProps = state =>  {
 }
 const mapDispatchToProps = {
     getCultures : () => getCultures(),
-    getProductsByType : (Id, type) => getProductsByType(Id, type)
+    getProductsByType : (Id, type, page) => getProductsByType(Id, type, page)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cultures));
