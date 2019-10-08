@@ -36,7 +36,7 @@ class Cultures extends Component {
                             return (
 
                                 <TouchableOpacity   onPress={()=>this.onPress(culture.id)} style={styles.container}>
-                                    {console.log(culture)}
+                                    {/*console.log(culture)*/}
                                     {/*
                                     !props.noIcon &&
                                     <View style={style.icon}>

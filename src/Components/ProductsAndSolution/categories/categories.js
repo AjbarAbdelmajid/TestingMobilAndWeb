@@ -18,8 +18,11 @@ class Categories extends Component {
         this.props.getCategories();
     }
     onPress(categoryId){
-        this.props.history.push("/product")
-        this.props.getProductsByType(categoryId, "category");
+        this.props.history.push({
+            pathname: "/product",
+            state: { id: categoryId, type: "category" }
+          })
+        this.props.getProductsByType(categoryId, "category", 0);
         
     }
     
@@ -36,8 +39,8 @@ class Categories extends Component {
                         Categories.map( category =>{
                             return (
 
-                                <TouchableOpacity onPress={()=>this.onPress(category.id)} style={styles.container}>
-                                    {console.log(category)}
+                                <TouchableOpacity key={category.id} onPress={()=>this.onPress(category.id)} style={styles.container}>
+                                    {console.log(category,"End")}
                                     {/*
                                     !props.noIcon &&
                                     <View style={style.icon}>
@@ -69,7 +72,7 @@ const mapStateToProps = state =>  {
 }
 const mapDispatchToProps = {
     getCategories : () => getCategories(),
-    getProductsByType: (Id, type) => getProductsByType(Id, type)
+    getProductsByType: (Id, type, page) => getProductsByType(Id, type, page)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Categories));
