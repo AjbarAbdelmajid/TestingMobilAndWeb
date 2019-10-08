@@ -51,9 +51,15 @@ class Products extends Component {
         return (<SearchBar lightTheme round />)
     }
     renderFooter= ()=>{
+        if (this.props.isDataEnded === false){
         return (
             <View><ActivityIndicator size="large" color="#00ff00" /></View>
-            )
+        )
+        } else{
+            return (<View><Text></Text></View>)
+        }
+        //<View><ActivityIndicator size="large" color="#00ff00" /></View>
+            
     }
     LoadMore= ()=>{
         // get the category id
@@ -93,7 +99,7 @@ class Products extends Component {
                     }
                     keyExtractor= {item => item.id}
                     ItemSeparatorComponent={this.renderSeparator}
-                    ListHeaderComponent={this.renderHeader}
+                    //ListHeaderComponent={this.renderHeader}
                     ListFooterComponent={this.renderFooter}
                     onEndReached={this.LoadMore}
                     onEndReachedThreshold={0.1}

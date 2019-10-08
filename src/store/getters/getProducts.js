@@ -19,7 +19,7 @@ export const getProductsByType = (Id, type, page)=>{
 
         // send a url depened on witch type is asked for
         if (type === "category"){
-            url = `${config.baseUrl}/productbyCategorie/${Id}/page/${page+1}/maxResult/${10}`
+            url = `${config.baseUrl}/productbyCategorie/${Id}/page/${page}/maxResut/${10}`
         }
         else if(type === "culture"){
             url = `${config.baseUrl}/productbyCulture/${Id}`

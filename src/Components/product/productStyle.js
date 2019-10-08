@@ -16,8 +16,8 @@ import {
         height: height * 0.8,
       },
       container: {
-        //height: height * 0.60
-        marginBottom: 50,
+        height: height * 0.66,
+        marginBottom: 100,
       },
       listBorder: {
         height: 1,

@@ -17,10 +17,10 @@ class Categories extends Component {
     componentDidMount() {
         this.props.getCategories();
     }
-    onPress(categoryId){
+    onPress(categoryId, nom){
         this.props.history.push({
             pathname: "/product",
-            state: { id: categoryId, type: "category" }
+            state: { id: categoryId,Typename:nom, type: "category" }
           })
         this.props.getProductsByType(categoryId, "category", 0);
         
@@ -39,7 +39,7 @@ class Categories extends Component {
                         Categories.map( category =>{
                             return (
 
-                                <TouchableOpacity key={category.id} onPress={()=>this.onPress(category.id)} style={styles.container}>
+                                <TouchableOpacity key={category.id} onPress={()=>this.onPress(category.id, category.nomCategorie)} style={styles.container}>
                                     {console.log(category,"End")}
                                     {/*
                                     !props.noIcon &&
