@@ -7,7 +7,7 @@ import HomePage from './HomePage/HomePage';
 import ProdectsAndSolution from './ProductsAndSolution';
 import Products from "./product/product";
 import ProductDetails from "./product/ProductDetails";
-import News from "./news"
+import NewsIndex from "./news/newsIndex"
 import Navbar from './navBar/navbar';
 
 class Routes extends Component {
@@ -25,7 +25,7 @@ class Routes extends Component {
                             <Route path="/productAndSolution" exact component={()=><ProdectsAndSolution />}/>
                             <Route path="/ProductDetails" exact component={()=><ProductDetails />}/>
                             <Route path="/Product" exact component={()=><Products />}/>
-                            <Route path="/news" exact component={()=><News />}/>
+                            <Route path="/news" exact component={()=><NewsIndex />}/>
                         </Switch>
                     </View>
                 </NativeRouter>

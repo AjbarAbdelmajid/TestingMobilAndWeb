@@ -17,30 +17,30 @@ class Navbar extends Component {
       goBack (){
           if (this.props.location.state){
               if ('Typename' in this.props.location.state){
-                return (<>
+                return (
+                <TouchableOpacity 
+                    style={{ backgroundColor: "#ffff"}}
+                    onPress={ () => this.props.history.goBack() }
+                >
                     <Header
-                    placement="left"
-                    backgroundColor="#fff"
-                    leftComponent={
-                        <Icon name='chevron-left'  color='#095a19' onPress={ () => this.props.history.goBack() }/>
-                    }
-                    centerComponent={
-                        <ThemeProvider>
-                            <TouchableOpacity
-                                style={{ backgroundColor: "#ffff"}}
-                                onPress={ () => this.props.history.goBack() }
-                                >
-                                <View>
-                                    <Text style={{ color: "#095a19", fontSize: 20}}>
-                                    {this.props.location.state.Typename}
-                                    </Text>
-                                </View>
-                    </TouchableOpacity>
-                        </ThemeProvider>
-                    }
-                />
-                    
-                    </>
+                        placement="left"
+                        backgroundColor="#fff"
+                        leftComponent={
+                            <Icon name='chevron-left'  color='#095a19' onPress={ () => this.props.history.goBack() }/>
+                        }
+                        centerComponent={
+                            <ThemeProvider>
+                                
+                                    <View>
+                                        <Text style={{ color: "#095a19", fontSize: 20}}>
+                                        {this.props.location.state.Typename}
+                                        </Text>
+                                    </View>
+                        
+                            </ThemeProvider>
+                        }   
+                    />
+                </TouchableOpacity>
                     )
               }
                 }
