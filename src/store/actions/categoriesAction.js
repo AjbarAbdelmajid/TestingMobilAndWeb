@@ -3,9 +3,9 @@ export const GET_CATEGORIES_FAILURE = 'GET_CATEGORIES_FAILURE';
 
 
 // to store the grabbed data from api
-export const CategoriesDataSuccess = announces =>({
+export const CategoriesDataSuccess = data =>({
     type: GET_CATEGORIES_SUCCESS,
-    categoriesPayload: announces
+    categoriesPayload: data
 });
 
 // in case if an error happened

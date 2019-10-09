@@ -99,13 +99,16 @@ class Products extends Component {
                     <FlatList
                     data={products}
                     renderItem={({item}) => 
-                        <View style={{marginBottom: 10, paddingBottom: 10}}>
+                        <View style={{marginBottom: 0, paddingBottom: 0}}>
         
                             <ListItem
                                 roundAvatar
                                 key={item.id}
                                 title={item.nomProduit}
                                 onPress={() => {this.onPress(item.id)}}
+                                leftAvatar={{url: require("../../assets/images/logoapp.png")
+                                /*PlaceholderContent=<ActivityIndicator />*/}}
+                                rightAvatar={PlaceholderContent=<Icon type='right'/>}
                             />
                             
                         </View>

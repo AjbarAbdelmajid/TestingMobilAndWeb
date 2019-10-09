@@ -17,9 +17,9 @@ class HomePage extends Component {
     return (
         <ScrollView style={styles.container}>
         <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/produits.jpg")} title="produits et Solutions"/> 
+        <ListHomePageItem onPress={()=>this.props.history.push("/news")} image={require("../../assets/images/HomePage/actus.jpg")} title="News"/>
         <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/agences.jpg")} title="testing"/>
         <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/agences.jpg")} title="test"/>
-        <ListHomePageItem onPress={()=>this.props.history.push("/productAndSolution")} image={require("../../assets/images/HomePage/actus.jpg")} title="test2"/>
         </ScrollView>
     );
   }
