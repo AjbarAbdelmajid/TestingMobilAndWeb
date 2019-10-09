@@ -34,11 +34,11 @@ export const getProductsByType = (Id, type, page)=>{
             // if the connection with the api server is okay
             .then(response =>{
                 if (response.status === 200){
-                    dispatch(ProductsDataSuccess(response.data, page))
+                    dispatch(ProductsDataSuccess(response.data, page+1))
                     console.log("response length : ", response.data.length)
                     console.log("current page number : ", page," categoryID: ",Id)
                     if(response.data.length <10){
-                        dispatch(isDataEnded(-1))
+                        dispatch(isDataEnded())
                     }
 
                 } else{

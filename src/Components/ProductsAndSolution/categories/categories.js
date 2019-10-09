@@ -5,7 +5,6 @@ import {connect} from "react-redux"
 import { Header,Button, ThemeProvider  } from 'react-native-elements';
 
 import styles from './categoriesStyle'
-import {getCategories} from "../../../store/getters/getCategories"
 import {getProductsByType} from "../../../store/getters/getProducts"
 
 
@@ -14,9 +13,7 @@ class Categories extends Component {
         super(props);
         this.state = {};
     }
-    componentDidMount() {
-        this.props.getCategories();
-    }
+    
     onPress(categoryId, nom){
         this.props.history.push({
             pathname: "/product",
@@ -71,7 +68,6 @@ const mapStateToProps = state =>  {
     }
 }
 const mapDispatchToProps = {
-    getCategories : () => getCategories(),
     getProductsByType: (Id, type, page) => getProductsByType(Id, type, page)
 }
 

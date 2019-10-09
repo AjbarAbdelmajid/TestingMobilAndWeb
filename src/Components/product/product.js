@@ -79,7 +79,7 @@ class Products extends Component {
         //call the getProductbyType method
         console.log('**************************** ', this.props.isDataEnded)
         if (this.props.isDataEnded === false)
-        this.props.getProductsByType(Id, type, (this.props.currentPage +1))
+        this.props.getProductsByType(Id, type, (this.props.currentPage))
         
         return <View><ActivityIndicator size="large" color="#00ff00" /></View>
             
@@ -118,7 +118,7 @@ class Products extends Component {
                     //ListHeaderComponent={this.renderHeader}
                     ListFooterComponent={this.renderFooter}
                     onEndReached={this.LoadMore}
-                    onEndReachedThreshold={0.1}
+                    onEndReachedThreshold={0}
                     />
                 </View>
             );

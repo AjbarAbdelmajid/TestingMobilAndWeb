@@ -18,9 +18,8 @@ export const ProductsDataSuccess = (data, currentPage) =>({
     currentPage: currentPage
 });
 // to store the grabbed data from api
-export const isDataEnded = (currentPage) =>({
+export const isDataEnded = () =>({
     type: IS_DATA_ENDED,
-    currentPage: currentPage,
     isDataEnded: true
 });
 

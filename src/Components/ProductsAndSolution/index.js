@@ -3,15 +3,24 @@ import { View, Text, ScrollView} from 'react-native';
 import {withRouter} from 'react-router-native';
 import { Header,Button, ThemeProvider  } from 'react-native-elements';
 import ParentItem from './Parents'
+import {connect} from "react-redux"
 
 import styles from "./indexStyles";
 import Categories from "./categories/categories"
 import Cultures from "./cultures/culture"
 import ListHomePageItem from '../HomePage/HomePageItems/homePageItems'
+import {getCategories} from "../../store/getters/getCategories"
+import {getCultures} from "../../store/getters/getCultures"
+
+
 
 class ProdectsAndSolution extends Component {
     constructor(props) {
         super(props);
+    }
+    componentDidMount() {
+        this.props.getCategories();
+        this.props.getCultures();
     }
     scrolleContent (){
         return (
@@ -40,6 +49,9 @@ class ProdectsAndSolution extends Component {
     }
 }
 
+mapDispatchToProps = {
+    getCategories : () => getCategories(),
+    getCultures : () => getCultures(),
+}
 
-
-export default withRouter(ProdectsAndSolution);
+export default withRouter(connect(null, mapDispatchToProps)(ProdectsAndSolution));

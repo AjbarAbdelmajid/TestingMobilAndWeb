@@ -4,7 +4,6 @@ import {withRouter} from 'react-router-native';
 import {connect} from "react-redux"
 
 import styles from './cultureStyle'
-import {getCultures} from "../../../store/getters/getCultures"
 import {getProductsByType} from "../../../store/getters/getProducts"
 
 
@@ -13,9 +12,6 @@ class Cultures extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getCultures();
-    }
     onPress(cultureId, nom){
         this.props.history.push({
             pathname: "/product",
@@ -38,7 +34,7 @@ class Cultures extends Component {
                         cultures.map( culture =>{
                             return (
 
-                                <TouchableOpacity   onPress={()=>this.onPress(culture.id, culture.nomFamille)} style={styles.container}>
+                                <TouchableOpacity  key={culture.id} onPress={()=>this.onPress(culture.id, culture.nomFamille)} style={styles.container}>
                                     {/*console.log(culture)*/}
                                     {/*
                                     !props.noIcon &&
@@ -70,7 +66,6 @@ const mapStateToProps = state =>  {
     }
 }
 const mapDispatchToProps = {
-    getCultures : () => getCultures(),
     getProductsByType : (Id, type, page) => getProductsByType(Id, type, page)
 }
 
